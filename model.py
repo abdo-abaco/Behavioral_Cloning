@@ -5,6 +5,7 @@ import numpy as np
 
 lines = []
 
+# storing camera images and associated steering angles into a log 
 with open('data/driving_log.csv') as csvfile:
 
   reader = csv.reader(csvfile)
@@ -15,7 +16,7 @@ images = []
 measurements = []
 
 
-
+# individually processing left, right and center images
 for line in lines:
   for i in range(3):
     source_path = line[i]
@@ -26,6 +27,7 @@ for line in lines:
     measurement = float(line[3])
     measurements.append(measurement)
 
+# augmenting generated images for greater generalization
 augmented_images, augmented_measurements = [], []
 for image,measurment in zip(images, measurements):
   augmented_images.append(image)
@@ -36,16 +38,26 @@ for image,measurment in zip(images, measurements):
 
 
 #train_generator = imageDataGenerator()
+
+
+# storing images and steering data onto X_trian and y_train respectively
 X_train = np.array(images)
 y_train = np.array(measurements)
 
+
+
+# Using keras tensorflow model to train network
 from keras.models import Sequential, Model
 from keras.layers import Flatten, Dense, Lambda, Cropping2D
 from keras.layers.convolutional import Convolution2D
 
 from keras.layers.pooling import MaxPooling2D
+
+# plotting accuracy measures on the convolution neural network
 import matplotlib.pyplot as plt
 
+
+# implementing the layer archetectures
 model = Sequential()
 #model.add(Reshape((64,128,3), input_shape=(160,320,3)))
 model.add(Lambda(lambda x: (x / 255.0) - 0.5, input_shape=(160,320,3)))
