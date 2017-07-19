@@ -88,17 +88,14 @@ The model was trained and validated on different data sets to ensure that the mo
 
 ![alt text][image2]
 
+The validation set helped determine the model was overfitting. The ideal number of epochs was 10 as evidenced by the training set nicely converging.
 
 The model uses an adam optimizer, so the learning rate was not tuned manually.
 
 Training data was chosen to keep the vehicle driving on the road. We used a combination of center lane driving, recovering from the left and right sides of the road .
 
-At the end of the process, the vehicle is able to drive autonomously around the track with leaving the road.
+At the end of the process, the vehicle is able to drive autonomously around the track occasionally leaving the road as shown in run1.mp4
 
-
-
-
-I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was Z as evidenced by ... I used an adam optimizer so that manually training the learning rate wasn't necessary.
 
 
 
