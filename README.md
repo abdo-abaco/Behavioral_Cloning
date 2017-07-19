@@ -57,7 +57,7 @@ Using a joystick and driving a couple of labs around the track we generate left,
 
 ![alt text][image1]
 
-After the collection process, I had 3,000 number of data points. I then preprocessed this data by and augmented by flipping, I finally randomly shuffled the data set and put 35% of the data into a validation set. 
+After the collection process, I had 3,000 number of data points. I augmented this data by flipping vertically, I then randomly shuffled the data set and put 35% of the data into a validation set. 
 
 
 Creating a Trained Model
@@ -76,8 +76,6 @@ The convolutional layers gradually increase the depth from 24 to 64 as the convo
 The model includes RELU layers to introduce nonlinearity.
 
 Lastly, the model flattens and is compiled.
-
-
 
 
 Starting a Training Session
