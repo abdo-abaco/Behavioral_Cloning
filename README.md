@@ -79,11 +79,15 @@ The model includes RELU layers to introduce nonlinearity.
 Starting a Training Session
 ---
 
+No dropout layers to reduce overfitting were implemented. We see the training set fit nicely over 10 iterations whereas the validation sets seems to suffer from overfitting.
+
+The model was trained and validated on different data sets to ensure that the model was not overfitting. The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
 
 
-The model contains dropout layers in order to reduce overfitting (model.py lines 21). 
+![alt text][image2]
 
-The model was trained and validated on different data sets to ensure that the model was not overfitting (code line 10-16). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
+
+
 
 ####3. Model parameter tuning
 
@@ -125,7 +129,7 @@ Here is a visualization of the architecture (note: visualizing the architecture 
 
 To capture good driving behavior, I first recorded two laps on track one using center lane driving. Here is an example image of center lane driving:
 
-![alt text][image2]
+
 
 I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to .... These images show what a recovery looks like starting from ... :
 
