@@ -10,14 +10,12 @@ In this project, we use what we've learned about deep neural networks and convol
 
 A simulator is provided where we can steer a car around a track for data collection using a joystick. We use image data and steering angles to train a neural network and then use this model to drive the car autonomously around the track.
 
-We also want you to create a detailed writeup of the project. Check out the [writeup template](https://github.com/udacity/CarND-Behavioral-Cloning-P3/blob/master/writeup_template.md) for this project and use it as a starting point for creating your own writeup. The writeup can be either a markdown file or a pdf document.
-
-To meet specifications, the project will require submitting five files: 
+The project includes five files: 
 * model.py (script used to create and train the model)
-* drive.py (script to drive the car - feel free to modify this file)
+* drive.py (script to drive the car)
 * model.h5 (a trained Keras model)
-* a report writeup file (either markdown or pdf)
-* video.mp4 (a video recording of your vehicle driving autonomously around the track for at least one full lap)
+* this README report writeup 
+* video.mp4 (a video recording of the vehicle driving autonomously around the track for at least one full lap)
 
 This README file describes how to output the video in the "Details About Files In This Directory" section.
 
