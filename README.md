@@ -44,7 +44,7 @@ The simulator can be downloaded from the Udacity classroom along with some sampl
 [//]: # (Image References)
 
 [image1]: ./simulator_image.png "Model Visualization"
-[image2]: ./examples/placeholder.png "Grayscaling"
+[image2]: ./figure_1.png "Grayscaling"
 [image3]: ./examples/placeholder_small.png "Recovery Image"
 [image4]: ./examples/placeholder_small.png "Recovery Image"
 [image5]: ./examples/placeholder_small.png "Recovery Image"
@@ -63,16 +63,23 @@ Creating a Trained Model
 
 We create the python model.py script which trains a model to learn the driving behavior recorded previously.
 
+The intial step for the model is to normalize the data.
 
-###Model Architecture and Training Strategy
+The second step is to crop out the distraction parts of the images which are mainly the background scenery.
 
-####1. An appropriate model architecture has been employed
+The second step is followed by three 5x5 convolutional layers and two 3x3 convolutional layers.
 
-My model consists of a convolution neural network with 3x3 filter sizes and depths between 32 and 128 (model.py lines 18-24) 
+Lastly, the model flattens and is compiled.
 
-The model includes RELU layers to introduce nonlinearity (code line 20), and the data is normalized in the model using a Keras lambda layer (code line 18). 
+The convolutional layers gradually increase the depth from 24 to 64 as the convolutional sizes decreases from 5x5 to 3x3.
 
-####2. Attempts to reduce overfitting in the model
+The model includes RELU layers to introduce nonlinearity.
+
+
+Starting a Training Session
+---
+
+
 
 The model contains dropout layers in order to reduce overfitting (model.py lines 21). 
 
