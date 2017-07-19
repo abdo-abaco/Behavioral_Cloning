@@ -41,11 +41,6 @@ The following resources can be found in the udacity github repository:
 
 The simulator can be downloaded from the Udacity classroom along with some sample data.
 
-Using the Simulator to Collect Data
----
-
-
-
 [//]: # (Image References)
 
 [image1]: ./simulator_image.png "Model Visualization"
@@ -55,6 +50,18 @@ Using the Simulator to Collect Data
 [image5]: ./examples/placeholder_small.png "Recovery Image"
 [image6]: ./examples/placeholder_small.png "Normal Image"
 [image7]: ./examples/placeholder_small.png "Flipped Image"
+
+Using the Simulator to Collect Data
+---
+Using a joystick and driving a couple of labs around the track we generate left, right and center image data along with also recording the steering angel. This data is recorded using the simulator GUI and saved onto the data subdirectory for processing next.
+
+![alt text][image1]
+
+
+Creating a Trained Model
+---
+
+We create the python model.py script which trains a model to learn the driving behavior recorded previously.
 
 
 ###Model Architecture and Training Strategy
@@ -105,7 +112,7 @@ The final model architecture (model.py lines 18-24) consisted of a convolution n
 
 Here is a visualization of the architecture (note: visualizing the architecture is optional according to the project rubric)
 
-![alt text][image1]
+
 
 ####3. Creation of the Training Set & Training Process
 
