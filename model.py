@@ -19,23 +19,7 @@ from keras.regularizers import l2
 # plotting accuracy measures on the convolution neural network
 import matplotlib.pyplot as plt
 
-def get_csv_data(log_file):
-    """
-    Reads a csv file and returns two lists separated into examples and labels.
-    :param log_file: The path of the log file to be read.
-    """
-    image_names, steering_angles = [], []
-    # Steering offset used for left and right images
-    steering_offset = 0.275
-    with open(log_file, 'r') as f:
-        reader = csv.reader(f)
-        next(reader, None)
-        for center_img, left_img, right_img, angle, _, _, _ in reader:
-            angle = float(angle)
-            image_names.append([center_img.strip(), left_img.strip(), right_img.strip()])
-            steering_angles.append([angle, angle+steering_offset, angle-steering_offset])
 
-    return image_names, steering_angles
 
 
 def generate_batch(X_train, y_train, batch_size=64):
@@ -71,11 +55,17 @@ def generate_batch(X_train, y_train, batch_size=64):
 
 
 
+X_train, y_train = [], []
 
+steering_offset = 0.275
+with open('data/driving_log.csv', 'r') as f:
+    reader = csv.reader(f)
+    next(reader, None)
+    for center_img, left_img, right_img, angle in reader:
+        angle = float(angle)
+        X_train.append([center_img.strip(), left_img.strip(), right_img.strip()])
+        y_train.append([angle, angle+steering_offset, angle-steering_offset])
 
-
-# Get the training data from log file, shuffle, and split into train/validation datasets
-X_train, y_train = get_csv_data('data/driving_log.csv')
 X_train, y_train = shuffle(X_train, y_train, random_state=14)
 X_train, X_validation, y_train, y_validation = train_test_split(X_train, y_train, test_size=0.1, random_state=14)
 
